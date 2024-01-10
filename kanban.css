@@ -17,8 +17,8 @@ body {
   color: rgb(8, 30, 66);
   display: flex;
   justify-content: space-evenly;
-  width: 100vw;
-  height: 80vh;
+  width: 100%;
+  height: 80%;
   text-align: center;
   font-size: 30px;
   font-weight: bold;

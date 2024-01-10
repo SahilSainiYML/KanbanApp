@@ -33,6 +33,17 @@ containerRef.addEventListener("click", (e) => {
 });
 
 createBtnRef.addEventListener("click", (e) => {
+  if (!titleRef.value) {
+    alert("Please add title!");
+    return;
+  }
+  if (!descRef.value) {
+    alert("Please add description");
+    return;
+  }
+  if (!dateRef.value) {
+    dateRef.value = new Date().toISOString().slice(0, 10);
+  }
   createTask();
 });
 
