@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="kanban.css" />
+    <title>Kanban Board</title>
+  </head>
+  <body>
+    <div class="main-container">Kanban Board</div>
+    <div class="container">
+      <div class="status-div backlog">
+        <header style="background-color: rgb(240, 154, 167); padding: 10px">
+          Backlog
+        </header>
+        <div class="tasks"></div>
+        <button id="addBtn" data-status="backlog">Add New Task</button>
+      </div>
+      <div class="status-div doing">
+        <header
+          style="background-color: rgba(243, 243, 113, 0.844); padding: 10px"
+        >
+          Doing
+        </header>
+        <div class="tasks"></div>
+        <button id="addBtn" data-status="doing">Add New Task</button>
+      </div>
+      <div class="status-div review">
+        <header style="background-color: lightgreen; padding: 10px">
+          Review
+        </header>
+        <div class="tasks"></div>
+        <button id="addBtn" data-status="review">Add New Task</button>
+      </div>
+      <div class="status-div done">
+        <header style="background-color: lightblue; padding: 10px">Done</header>
+        <div class="tasks"></div>
+        <button id="addBtn" data-status="done">Add New Task</button>
+      </div>
+    </div>
+    <div class="model-container hide">
+      <div class="model">
+        <input placeholder="Task Title" value="" />
+        <input placeholder="Task Description" value="" />
+        <input type="date" />
+        <button class="create">Create Task</button>
+      </div>
+    </div>
+  </body>
+  <script src="kanban.js"></script>
+</html>
