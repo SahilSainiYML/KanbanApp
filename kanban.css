@@ -74,6 +74,8 @@ body {
 .description-div {
   font-size: 10px;
   color: gray;
+  display: flex;
+  justify-content: space-between;
 }
 
 .model {
@@ -81,7 +83,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(199, 137, 134);
+  background-color: rgb(156, 150, 150);
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -137,6 +139,8 @@ input {
 }
 
 .fa-trash {
-  width: 20px;
-  height: 20px;
+  width: 1%;
+  height: 1%;
+  color: red;
+  padding-right: 7px;
 }

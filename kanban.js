@@ -27,6 +27,8 @@ containerRef.addEventListener("click", (e) => {
   if (e.target.id === "addBtn") {
     modelContainer.classList.remove("hide");
     targetEle = e.target;
+  } else if (e.target.classList.contains("fa-trash")) {
+    e.target.closest(".task").remove();
   }
 });
 
@@ -42,7 +44,7 @@ function createTask() {
       ${titleRef.value}
       <span>${dateRef.value}</span>
     </div>
-    <div class="description-div">${descRef.value}</i></div>
+    <div class="description-div">${descRef.value}<i class="fa fa-trash"></i>
   </div>`;
   let tasks = targetEle.parentElement.querySelector(".tasks");
   tasks.append(divEle);
