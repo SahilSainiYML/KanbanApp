@@ -81,9 +81,15 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(255, 13, 0);
+  background-color: rgb(199, 137, 134);
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  justify-content: space-evenly;
+  margin: 10px;
+  width: 30%;
+  height: 30%;
+  border-radius: 15px;
 }
 
 .model-container {
@@ -120,4 +126,17 @@ body {
 
 .done #addBtn:hover {
   background-color: lightblue;
+}
+.is-dragging {
+  background-color: lightsalmon;
+  color: white;
+}
+
+input {
+  height: 20%;
+}
+
+.fa-trash {
+  width: 20px;
+  height: 20px;
 }

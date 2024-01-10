@@ -10,8 +10,10 @@ let targetEle;
 
 boards.forEach((board) => {
   board.addEventListener("dragover", (e) => {
+    e.preventDefault();
     const task = document.querySelector(".is-dragging");
     const closestElement = getTheClosestElement(board, e.clientY);
+
     if (closestElement) {
       board.insertBefore(task, closestElement);
     } else {
@@ -40,7 +42,7 @@ function createTask() {
       ${titleRef.value}
       <span>${dateRef.value}</span>
     </div>
-    <div class="description-div">${descRef.value}</div>
+    <div class="description-div">${descRef.value}</i></div>
   </div>`;
   let tasks = targetEle.parentElement.querySelector(".tasks");
   tasks.append(divEle);
@@ -50,35 +52,4 @@ function createTask() {
   descRef.value = "";
   dateRef.value = "";
   return divEle;
-}
-
-const getTheClosestElement = (board, yAxis) => {
-  const tasksInThisBoard = board.querySelectorAll(".tasks:not(.is-dragging)");
-  debugger;
-  let closestElement = null;
-  let closestDistance = Number.NEGATIVE_INFINITY;
-
-  tasksInThisBoard.forEach((task) => {
-    const boundry = task.getBoundingClientRect();
-    const top = boundry.top;
-
-    const distance = yAxis - top;
-
-    if (distance < 0 && distance > closestDistance) {
-      closestDistance = distance;
-      closestElement = task;
-    }
-  });
-
-  return closestElement;
-};
-
-function addDragListener(task) {
-  task.addEventListener("dragstart", (e) => {
-    task.classList.add("is-dragging");
-  });
-
-  task.addEventListener("dragend", (e) => {
-    task.classList.remove("is-dragging");
-  });
 }
